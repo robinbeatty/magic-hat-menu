@@ -2,7 +2,7 @@ import social from "./assets/project/meta/social";
 import { siteName } from "./assets/project/params";
 
 export default defineNuxtConfig({
-	ssr:false,
+	ssr:true,
 	devtools: { enabled: true },
 	routeRules: {},
 	modules: [
