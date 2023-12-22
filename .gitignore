@@ -1,5 +1,16 @@
 node_modules
+.DS_Store
+*.DS_Store*
+*.log*
 .nuxt
+.nitro
+.cache
+.output
 .env
-.netlify
+.env.*
+dist
+*.cert
+*.key
 *.pem
+# Local Netlify folder
+.netlify
