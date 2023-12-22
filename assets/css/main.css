@@ -1,0 +1,92 @@
+/* Google Font */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .font-brand-headings { @apply font-mono uppercase tracking-wide font-medium }
+    .font-brand-body { @apply font-mono font-normal text-base tracking-wide }
+    .font-brand-leader { @apply font-mono }
+
+    .unicase { 
+        @apply capitalize;
+        font-variant-caps: unicase; 
+    }
+
+    body { @apply font-brand-body }
+    .brand-rounded { @apply rounded }
+    .button { @apply font-brand-sm text-xs md:text-sm whitespace-nowrap inline-flex brand-rounded px-5 h-10 relative items-center text-center justify-center }
+    .button-round { @apply leading-none w-10 h-10 uppercase relative inline-flex justify-center items-center align-middle brand-rounded }
+    .button-dark { @apply bg-slate-900 hover:bg-slate-600 text-slate-100 hover:text-white }
+    .button-sm { @apply font-brand-2xs whitespace-nowrap inline-flex brand-rounded px-3 h-6 relative items-center }
+    .tag { @apply font-light text-xs inline-block py-1 px-3 tracking-wide brand-rounded bg-blue-50 border border-blue-100 text-blue-800 relative align-baseline whitespace-nowrap }
+    .body-text { @apply text-3xl font-brand-body tracking-wider leading-tight space-y-3 }
+    .body-text-sans { @apply font-brand-body leading-relaxed space-y-3 }
+    .body-text-sm { @apply font-brand-body font-normal text-base leading-relaxed  space-y-3 tracking-wide }
+    .body-text-sans-sm { @apply font-brand-body text-base leading-relaxed space-y-3 }
+    .body-text a, .redactor a { @apply border-b-2 border-slate-400 hover:text-slate-400 }
+    .small-text { @apply leading-relaxed text-slate-400 font-brand-body text-xs space-y-3 tracking-wide }
+    .leader-text { @apply font-brand-leader space-y-3 text-xl md:text-3xl leading-relaxed md:leading-normal }
+    .font-brand-sm { @apply font-brand-body font-semibold uppercase text-sm tracking-wider }
+    .font-brand-sm-light { @apply font-brand-body tracking-widest font-light uppercase text-sm }
+    .font-brand-sm { @apply font-brand-body font-semibold uppercase text-sm tracking-[1px] }
+    .font-brand-xs { @apply font-brand-body font-semibold uppercase text-xs tracking-[1px] }
+    .font-brand-2xs { @apply font-brand-body font-semibold uppercase text-2xs tracking-widest }
+    .heading-base { @apply font-brand-headings leading-none }
+    h1, .heading-1 { @apply heading-base text-5xl sm:text-6xl lg:text-7xl leading-[90%] sm:leading-[90%] lg:leading-[90%] }
+    h2, .heading-2 { @apply heading-base text-2xl lg:text-3xl xl:text-4xl leading-none lg:leading-none }
+    h3, .heading-3 { @apply heading-base font-medium text-lg md:text-xl lg:text-2xl leading-none lg:leading-none }
+    h4, .heading-4 { @apply heading-base font-sans font-medium text-lg lg:text-lg leading-none lg:leading-none tracking-normal }
+    h5, .heading-5 { @apply heading-base font-sans font-medium text-lg leading-none }
+    .border-brand { @apply border-slate-700 border }
+    .object-contain-important { object-fit:contain!important }
+    .flex-center { @apply flex items-center justify-center text-center }
+    .full-screen { @apply w-screen h-screen }
+    .z-max { z-index:999999 }
+    .r { @apply bg-red-500 }
+    .mx-main { @apply mx-auto }
+    .px-main { @apply px-2 }
+    .pl-main { @apply pl-2 }
+    .pr-main { @apply pr-2 }
+    .py-main { @apply py-2 }
+    .pb-full { padding-bottom:100% }
+    .pb-1\/2 { padding-bottom:50% }
+    .bg-white-noise { @apply bg-slate-500 text-slate-800 }
+    .transform-center { @apply left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 }
+    .input-base { @apply border-0 py-1.5 h-10 text-slate-900 shadow-sm ring-1 ring-inset ring-slate-300 placeholder:text-slate-400 disabled:opacity-50 disabled:bg-sky-100 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 rounded-md }
+    .input-focus { @apply ring-inset focus:ring ring-slate-300 }
+    .input-label { @apply text-xs font-medium tracking-normal whitespace-nowrap leading-loose }
+
+
+    .bg-colour-1 { @apply bg-stone-50 text-stone-700 }
+    .bg-colour-2 { @apply bg-brand-colour-2 text-slate-800 }
+    .bg-colour-3 { @apply bg-brand-colour-3 text-slate-800 }
+    .bg-colour-4 { @apply bg-brand-colour-4 text-slate-100 }
+    .bg-colour-5 { @apply bg-brand-colour-5 text-slate-100 }
+    .bg-colour-6 { @apply bg-brand-colour-6 text-slate-100 }
+    
+
+    .base-colour-1 { @apply bg-brand-colour-1 text-slate-800 }
+    .base-colour-1 .heading-1, .base-colour-1 .heading-2, .base-colour-1 .heading-3, .base-colour-1 .heading-4 { @apply text-slate-800 }
+    
+    .base-colour-2 { @apply bg-brand-colour-2 text-slate-800 }
+    .base-colour-2 .heading-1, .base-colour-2 .heading-2, .base-colour-2 .heading-3, .base-colour-2 .heading-4 { @apply text-slate-800 }
+
+    .base-colour-3 { @apply bg-brand-colour-3 text-brand-white }
+    .base-colour-3 .heading-1, .base-colour-3 .heading-2, .base-colour-3 .heading-3, .base-colour-3 .heading-4 { @apply text-brand-colour-1 }
+
+    .base-colour-4 { @apply bg-brand-colour-4 text-slate-300 }
+    .base-colour-4 .heading-1, .base-colour-4 .heading-2, .base-colour-4 .heading-3, .base-colour-4 .heading-4 { @apply text-slate-100 }
+
+    .base-colour-5 { @apply bg-brand-colour-5 text-slate-300 }
+    .base-colour-5 .heading-1, .base-colour-5 .heading-2, .base-colour-5 .heading-3, .base-colour-5 .heading-4 { @apply text-slate-100 }
+    
+    .base-colour-6 { @apply bg-brand-colour-6 text-slate-400 }
+    .base-colour-6 .heading-1, .base-colour-6 .heading-2, .base-colour-6 .heading-3, .base-colour-6 .heading-4 { @apply text-slate-200 }
+
+}
+@layer utilities {
+    
+}

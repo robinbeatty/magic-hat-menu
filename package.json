@@ -1,0 +1,53 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "preview": "nuxt preview --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "generate": "nuxt generate",
+    "postinstall": "nuxt prepare",
+    "tsc": "nuxi typecheck"
+  },
+  "devDependencies": {
+    "@headlessui/vue": "^1.7.15",
+    "@heroicons/vue": "^2.0.13",
+    "@nuxt/devtools": "latest",
+    "@nuxt/image": "^1.0.0-rc.3",
+    "@nuxt/vite-builder": "^3.6.5",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@nuxtjs/netlify-files": "^1.2.0",
+    "@nuxtjs/robots": "^3.0.0",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@nuxtseo/module": "^2.0.0-beta.15",
+    "@tailwindcss/forms": "^0.5.4",
+    "@tailwindcss/typography": "^0.5.4",
+    "@types/node": "^20.4.10",
+    "@typescript-eslint/eslint-plugin": "^6.3.0",
+    "@typescript-eslint/parser": "^6.3.0",
+    "@vueuse/core": "^10.3.0",
+    "@vueuse/nuxt": "^10.3.0",
+    "autoprefixer": "latest",
+    "email-validator": "^2.0.4",
+    "eslint": "^8.47.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "mailgun.js": "^9.2.0",
+    "nuxt": "^3.8.2",
+    "nuxt-simple-sitemap": "^3.1.8",
+    "postcss": "latest",
+    "postcss-nesting": "latest",
+    "sass": "^1.65.1",
+    "tailwind-gradient-mask-image": "^1.0.0",
+    "tailwind-scrollbar-hide": "^1.1.7",
+    "tailwindcss": "latest",
+    "typescript": "^5.1.6",
+    "vite-plugin-eslint": "^1.8.1",
+    "vue": "^3.3.10",
+    "vue-gtag-next": "^1.14.0",
+    "vue-router": "^4.2.5"
+  },
+  "dependencies": {
+    "vue-flip": "^3.0.2"
+  }
+}

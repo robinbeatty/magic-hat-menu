@@ -1,0 +1,6 @@
+import * as Type from 'assets/common/types/types'
+import * as Schema from 'assets/common/types/craftSchema'
+export const siteHandle = 'aba'
+export const siteName = 'Anything But Advertising'
+export const emailContact = 'hello@anythingbutadvertising.com'
+export const baseUrl = 'https://anythingbutadvertising.netlify.app'
