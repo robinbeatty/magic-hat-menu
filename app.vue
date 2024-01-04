@@ -10,11 +10,10 @@ if ( !config.indexable ) {
 }
 const route = useRoute()
 const dark = computed(() => route.query['dark'] == 'true')
-
 </script>
 
 <template>
-	<div class="bg-colour-1" :class="dark && 'invert'">
+	<div :class="dark && 'dark'">
 		<NuxtLayout>
 			<div>
 				<NuxtPage />

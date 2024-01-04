@@ -137,7 +137,7 @@ const aggregatedMenu = computed(() => {
 
 </script>
 <template>
-    <div class="font-mono p-3 md:p-10 bg-white min-h-screen" :class="projectorView && 'lg:max-h-screen overflow-hidden'">
+    <div class="font-mono p-3 md:p-10 min-h-screen dark:bg-stone-900 dark:text-stone-200" :class="[projectorView && 'lg:max-h-screen overflow-hidden']">
         <main v-if="menu" class="w-full items-start">
             <div>
                 <div class="text-center w-full py-5">
@@ -149,11 +149,11 @@ const aggregatedMenu = computed(() => {
                         {{getOpeningHoursString(targetDateString)}}
                     </div>
                 </div>
-                <div class="border-y-2 border-black w-full min-h-6">
+                <div class="border-y-2 border-black dark:border-stone-700 w-full min-h-6">
                     <div class="uppercase text-sm text-center p-3">{{ getDateString(targetDateString) }}</div>
                 </div>
                 <section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-x-12 text-left">
-                    <div v-for="menu in aggregatedMenu" :key="menu.menuType" class="border-b-2 border-black pt-5 pb-6 xl:pt-10 xl:pb-10">
+                    <div v-for="menu in aggregatedMenu" :key="menu.menuType" class="border-b-2 border-black dark:border-stone-700 pt-5 pb-6 xl:pt-10 xl:pb-10">
                         <h2 class="text-2xl leading-none">
                             {{ menu.menuType }}
                             <span v-if="menu.menuDescription" class="text-xs">{{ menu.menuDescription }}</span>
@@ -165,7 +165,7 @@ const aggregatedMenu = computed(() => {
                                         <h4 class="mr-2 font-normal font-mono inline">
                                             {{item.itemName}}
                                         </h4>
-                                        <span v-for="label in item.dietaryCompliance" :key="label" class="text-2xs uppercase rounded-sm border border-black font-medium font-sans size-5 text-black inline-flex items-center justify-center leading-[0] align-top mt-0">
+                                        <span v-for="label in item.dietaryCompliance" :key="label" class="text-2xs uppercase rounded-sm border border-black dark:border-current font-medium font-sans size-5 text-black dark:text-current inline-flex items-center justify-center leading-[0] align-top mt-0">
                                             <span>{{ getComplianceString(label) }}</span>
                                         </span>
                                     </div>
