@@ -41,6 +41,7 @@ if ( route.query['date'] ) {
 } else {
     targetDateString = getMostRecentMenuDate(entries.value || []) as Util.DateStringHyphenated
 }
+const projectorView = route.query['projector'] == 'true'
 
 const getDateString = (dateString:string) => {
     const segments = dateString.split('-')
@@ -88,7 +89,8 @@ const getOpeningHoursString = (date:Util.DateStringHyphenated) => {
 const getComplianceString = (string:string) => {
     if ( string.toLowerCase() == 'vegan' ) return 've'
     if ( string.toLowerCase() == 'vegetarian' ) return 'v'
-    return string
+    // else take the initial letters of the string
+    return string.split(' ').map(word => word[0]).join('')
 }
 const getAllergensString = (allergens:Schema.AllergensCategory[]) => {
     return `Contains ${allergens.map(allergen => {
@@ -135,8 +137,8 @@ const aggregatedMenu = computed(() => {
 
 </script>
 <template>
-    <div class="font-mono p-3 md:p-10 bg-white">
-        <main v-if="menu" class="w-full lg:max-h-screen lg:flex-center">
+    <div class="font-mono p-3 md:p-10 bg-white" :class="projectorView && 'lg:max-h-screen overflow-hidden'">
+        <main v-if="menu" class="w-full items-start">
             <div>
                 <div class="text-center w-full py-5">
                     <h1 class="xl:text-5xl">Magic Hat</h1>
