@@ -31,6 +31,7 @@ const getAsyncDataParams = ({ query, variables }: { query:string, variables:Craf
 		headers:getCraftHeaders(getCraftPreviewTokens(route), 'craft_private_schema'),
 		body
 	}
+	console.log(fetchParams.headers)
 	return { key, endpoint, fetchParams }
 }
 export default defineNuxtPlugin((NuxtApp) => {

@@ -137,7 +137,7 @@ const aggregatedMenu = computed(() => {
 
 </script>
 <template>
-    <div class="font-mono p-3 md:p-10 bg-white" :class="projectorView && 'lg:max-h-screen overflow-hidden'">
+    <div class="font-mono p-3 md:p-10 bg-white min-h-screen" :class="projectorView && 'lg:max-h-screen overflow-hidden'">
         <main v-if="menu" class="w-full items-start">
             <div>
                 <div class="text-center w-full py-5">

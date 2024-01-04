@@ -8,11 +8,13 @@ const config = useRuntimeConfig()
 if ( !config.indexable ) {
 	console.warn('Site is set to not be indexed by search engines (.env.indexable=false)')
 }
+const route = useRoute()
+const dark = computed(() => route.query['dark'] == 'true')
 
 </script>
 
 <template>
-	<div class="bg-colour-1">
+	<div class="bg-colour-1" :class="dark && 'invert'">
 		<NuxtLayout>
 			<div>
 				<NuxtPage />
