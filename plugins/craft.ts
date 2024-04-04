@@ -31,7 +31,7 @@ const getAsyncDataParams = ({ query, variables }: { query:string, variables:Craf
 		headers:getCraftHeaders(getCraftPreviewTokens(route), 'craft_private_schema'),
 		body
 	}
-	console.log(fetchParams.headers)
+	//console.log(fetchParams.headers)
 	return { key, endpoint, fetchParams }
 }
 export default defineNuxtPlugin((NuxtApp) => {
@@ -58,7 +58,7 @@ export default defineNuxtPlugin((NuxtApp) => {
 						})
 						return useAsyncData(key, ():Promise<Type.CraftGraphQlResponse<DataT>> => $fetch(endpoint, fetchParams), {
 							transform: (data:Type.CraftGraphQlResponse<DataT>) => {
-								console.log(data)
+								//console.log(data)
 								return handleFetchResponse<DataT>(data, message)
 							}
 						})
@@ -81,7 +81,7 @@ export default defineNuxtPlugin((NuxtApp) => {
 						})
 						return useAsyncData(key, ():Promise<Type.CraftGraphQlResponse<DataT>> => $fetch(endpoint, fetchParams), {
 							transform: (data:Type.CraftGraphQlResponse<DataT>) => {
-								console.log(data)
+								//console.log(data)
 								return handleFetchResponse<DataT>(data, message)
 							}
 						})
@@ -102,7 +102,7 @@ export default defineNuxtPlugin((NuxtApp) => {
 							})
 							return useAsyncData(key, ():Promise<Type.CraftGraphQlResponse<DataT>> => $fetch(endpoint, fetchParams), {
 								transform: (data:Type.CraftGraphQlResponse<DataT>) => {
-									console.log(data)
+									//console.log(data)
 									return handleFetchResponse<DataT>(data, message)
 								}
 							})

@@ -44,7 +44,7 @@ if ( route.query['date'] ) {
     targetDateString = yyyy.toString() + '-' + mm.toString() + '-' + dd.toString() as Util.DateStringHyphenated
 } else {
     targetDateString = getMostRecentMenuDate(entries.value || []) as Util.DateStringHyphenated
-    console.log(targetDateString)
+    //console.log(targetDateString)
 }
 const projectorView = route.query['projector'] == 'true'
 
@@ -61,7 +61,7 @@ const getDateString = (dateString:string) => {
 }
 
 // find the menu with the most recent date, that is not in the future
-console.log(entries.value)
+//console.log(entries.value)
 const menu = entries.value ? entries.value[0] : null
 
 const mostRecentMenuDate = getMostRecentMenuDate(entries.value || [])

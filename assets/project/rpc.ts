@@ -133,7 +133,7 @@ export const getEndpoint = (config:RuntimeConfig, craftPreviewTokens?: LocationQ
 	const useTokenParam = false
 	// append token param to endpoint if it's a preview request
 	const endpoint = craftPreviewTokens && useTokenParam ? `${endpointUrl}?token=${craftPreviewTokens.token}` : endpointUrl
-	console.log(endpoint)
+	//console.log(endpoint)
 	return endpoint
 }
 export const getFetchParams = ({ query, variables }: { query:string, variables:Type.Variables }) => {
