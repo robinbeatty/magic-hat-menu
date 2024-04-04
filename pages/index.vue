@@ -8,9 +8,13 @@ const { data:entries } = await $craft.query.menus()
 const { data:globalSet } = await $craft.query.globalSet.magicHatMenu()
 
 const getMostRecentMenuDate = (entries:Schema.MenuEntry[]) => {
-    const dates = entries.map(entry => new Date(entry.date).getTime())
-    const mostRecentDate = Math.max(...dates)
-    return new Date(mostRecentDate).toISOString().split('T')[0]
+    const getDateAsYYYYMMDD = (date:Date) => {
+        const dd = String(date.getDate()).padStart(2, '0')
+        const mm = String(date.getMonth() + 1).padStart(2, '0') //January is 0!
+        const yyyy = date.getFullYear()
+        return yyyy.toString() + '-' + mm.toString() + '-' + dd.toString() as Util.DateStringHyphenated
+    }
+    return entries.length ? getDateAsYYYYMMDD(new Date(entries[0].date)) : null
 }
 const getTodayAsString = () => {
     const today = new Date()
@@ -40,6 +44,7 @@ if ( route.query['date'] ) {
     targetDateString = yyyy.toString() + '-' + mm.toString() + '-' + dd.toString() as Util.DateStringHyphenated
 } else {
     targetDateString = getMostRecentMenuDate(entries.value || []) as Util.DateStringHyphenated
+    console.log(targetDateString)
 }
 const projectorView = route.query['projector'] == 'true'
 
@@ -56,11 +61,8 @@ const getDateString = (dateString:string) => {
 }
 
 // find the menu with the most recent date, that is not in the future
-const menu = entries.value?.find(entry => {
-    const menuDate = new Date(entry.date).getTime()
-    const targetDate = new Date(targetDateString).getTime()
-    return menuDate === targetDate
-}) || null
+console.log(entries.value)
+const menu = entries.value ? entries.value[0] : null
 
 const mostRecentMenuDate = getMostRecentMenuDate(entries.value || [])
 
